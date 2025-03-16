@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    touch-action: manipulation;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 400px;
+    background-color: #222;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+}
+
+.display {
+    margin-bottom: 15px;
+}
+
+#display {
+    width: 100%;
+    height: 70px;
+    background-color: #444;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 28px;
+    color: #fff;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+button {
+    padding: 20px 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+}
+
+button:active {
+    transform: scale(0.95);
+    background-color: #444;
+}
+
+.operator {
+    background-color: #f39c12;
+}
+
+.function {
+    background-color: #2980b9;
+    font-size: 18px;
+}
+
+.equals {
+    background-color: #27ae60;
+}
+
+.clear {
+    background-color: #c0392b;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+    .calculator {
+        height: 100vh;
+        max-height: -webkit-fill-available;
+        border-radius: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttons {
+        flex: 1;
+        gap: 5px;
+    }
+
+    button {
+        padding: 15px 5px;
+        font-size: 18px;
+        height: 100%;
+    }
+
+    .function {
+        font-size: 16px;
+    }
+}
+
+/* Prevent zoom on iOS */
+@supports (-webkit-touch-callout: none) {
+    input {
+        font-size: 16px;
+    }
+} 
